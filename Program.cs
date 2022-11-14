@@ -1,4 +1,6 @@
-﻿namespace LinkedList
+﻿using System.Text.RegularExpressions;
+
+namespace LinkedList
 {
     class Node
     {
@@ -81,8 +83,7 @@
         {
             for (previous = current = START;
                 current != null && rollNo != current.noMhs;
-                previous = current, current = current.next)
-            { }
+                previous = current, current = current.next) { }
             return (current != null);
         }
         public bool dellNode(int rollNo)
@@ -96,6 +97,14 @@
             {
                 previous.next = null;
                 return true;
+            }
+            // node between two nodes in the list 
+            if (current == START)
+            {
+                START = START.next;
+                if (START != null)
+                    START.prev = null;
+                return false;
             }
         }
     }
