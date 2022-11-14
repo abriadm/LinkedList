@@ -119,7 +119,31 @@
         }
         public void ascending()
         {
-            if()
+            if (ListEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecord in the ascending order of "+ "roll number are:\n");
+                Node currentNode;
+                for(currentNode = START; currentNode != null; currentNode = currentNode.next)
+                    Console.WriteLine(currentNode.noMhs + " " + currentNode.name + "\n");
+            }
+        }
+        public void descending()
+        {
+            if (ListEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecord in the Descending order of " + "roll number are:\n");
+                Node currentNode;
+                for(currentNode = START; currentNode != null; currentNode = currentNode.next) { }
+                while(currentNode != null)
+                {
+                    Console.WriteLine(currentNode.noMhs + " " + currentNode.name + "\n");
+                    currentNode = currentNode.prev;
+                }
+            }
         }
     }
     class Program
