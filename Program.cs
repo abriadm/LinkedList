@@ -19,7 +19,42 @@
         Node START;
 
         // constructor
+        public DoubleLinkedList()
+        {
+            START = null;
+        }
+        public void addNode()
+        {
+            int nim;
+            string nm;
+            Console.Write("Enter the roll number of the sudent: ");
+            nim = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nEnter the ame of the student: ");
+            nm = Console.ReadLine();
+            Node newNode = new Node();
+            newNode.noMhs = nim;
+            newNode.name = nm;
 
+            // check if the list empty
+            if(START == null || nim <= START.noMhs)
+            {
+                if((START != null) && (nim == START.noMhs))
+                {
+                    Console.WriteLine("\nDuplicate number not allowed");
+                    return;
+                }
+                newNode.next = START;
+                if(START != null)
+                    START.prev = newNode;
+                newNode.prev = null;
+                return;
+            }
+            /*if the node is to be inserted at between two node*/
+            Node previous, current;
+            for(current = previous = START;
+                current != null && nim >= current.noMhs;
+                previous = current, current = current.next)
+        }
     }
     class Program
     {
