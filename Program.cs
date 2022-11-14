@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace LinkedList
+﻿namespace LinkedList
 {
     class Node
     {
@@ -104,8 +102,24 @@ namespace LinkedList
                 START = START.next;
                 if (START != null)
                     START.prev = null;
-                return false;
+                return true;
             }
+            /*if the to be deleted is in between the list then the
+              following lines of executed.*/
+            previous.next = current.next;
+            current.next.prev = previous;
+            return true;
+        }
+        public bool ListEmpty()
+        {
+            if(START == null)
+                return true;
+            else
+                return false;
+        }
+        public void ascending()
+        {
+            if()
         }
     }
     class Program
