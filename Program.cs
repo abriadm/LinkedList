@@ -150,7 +150,15 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            DoubleLinkedList obj = new DoubleLinkedList();
+            while(true)
+            {
+                try
+                {
+                    Console.WriteLine("\nMenu");
+                    Console.WriteLine("\nMenu");
+                }
+            }
         }
     }
 }
